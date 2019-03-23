@@ -1,5 +1,4 @@
-package main
-
+package imageprocessing
 
 import (
     "gocv.io/x/gocv"
@@ -7,13 +6,12 @@ import (
     "image/color"
 )
 
-func PaintCircle(Image gocv.Mat, center image.Point,radius int, color color.RGBA, thickness int,show bool, save bool){
-    gocv.Circle(&Image,center,radius,color, thickness)
+func PaintCircle(Image gocv.Mat, center image.Point, radius int, color color.RGBA, thickness int, show bool, save bool) {
+    gocv.Circle(&Image, center, radius, color, thickness)
 
     //ALL available colors
     {
-        //var HotPink RGBA
-        //HotPink = color.RGBA{0x99,0x33,0x66}//HotPink
+        //var HotPink color = color.RGBA{0x99,0x33,0x66,0}//HotPink
 
         // var LightPink color.RGBA := color.RGBA{0xFF,0x99,0xCC}//LightPink
 
@@ -92,24 +90,24 @@ func PaintCircle(Image gocv.Mat, center image.Point,radius int, color color.RGBA
         // var Black color.RGBA := color.RGBA{0x00,0x00,0x00}//Black
     }
 
-//func Circle(img *Mat, center image.Point, radius int, c color.RGBA := color.RGBA, thickness int)
+    //func Circle(img *Mat, center image.Point, radius int, c color.RGBA := color.RGBA, thickness int)
 
-    if show{
-        ShowImage("The Circle was done!",Image,0)
+    if show {
+        ShowImage("The Circle was done!", Image, 0)
     }
 
-    if save{
-        SaveImage("CircleMade",Image)
-    }
-}
-
-func PaintPath(Image gocv.Mat,Initial image.Point,Destiny image.Point){
-    for Initial.X != Destiny.X{
-        Initial.X = Initial.X + 1
-        for Initial.Y != Destiny.Y{
-            Initial.Y = Initial.Y + 1
-            Image.at<Vec3b>(Initial) = color.RGBA{0x00, 0x00, 0x00, 0x00};
-            ShowImage("Steps",Image,5)
-        }
+    if save {
+        SaveImage("CircleMade", Image)
     }
 }
+
+// func PaintPath(Image gocv.Mat,Initial image.Point,Destiny image.Point){
+//     for Initial.X != Destiny.X{
+//         Initial.X = Initial.X + 1
+//         for Initial.Y != Destiny.Y{
+//             Initial.Y = Initial.Y + 1
+//             Image.at<Vec3b>(Initial) = color.RGBA{0x00, 0x00, 0x00, 0x00};
+//             ShowImage("Steps",Image,5)
+//         }
+//     }
+// }
