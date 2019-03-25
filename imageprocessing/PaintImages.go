@@ -9,11 +9,6 @@ import (
 func PaintCircle(Image gocv.Mat, center image.Point, radius int, color color.RGBA, thickness int, show bool, save bool) {
     gocv.Circle(&Image, center, radius, color, thickness)
 
-    //ALL available colors
-    {
-
-    }
-
     //func Circle(img *Mat, center image.Point, radius int, c color.RGBA := color.RGBA, thickness int)
 
     if show {
@@ -25,8 +20,7 @@ func PaintCircle(Image gocv.Mat, center image.Point, radius int, color color.RGB
     }
 }
 
-
-func PaintRectangle(Image gocv.Mat, r image.Rectangle, color color.RGBA, thickness int, show bool, save bool)
+func PaintRectangle(Image gocv.Mat, r image.Rectangle, color color.RGBA, thickness int, show bool, save bool) {
 
     gocv.Rectangle(Image, r, color, thickness)
 
