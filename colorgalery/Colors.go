@@ -81,14 +81,13 @@ const Black = 38
 const HotPink = 39
 
 type RGBAcolor struct {
-    Red     uint8
-    Green   uint8
-    b       uint8
-    swatche uint8
-    label   string
+    Red   uint8
+    Green uint8
+    Blue  uint8
+    label string
 }
 
-func SetColor(color int, index int) int {
+func SetColor(color int, index int) uint8 {
 
     Colors := []RGBAcolor{
 
@@ -103,6 +102,8 @@ func SetColor(color int, index int) int {
         {label: "DeeoBlue", Red: 51, Green: 51, Blue: 153},
 
         {label: "GrayBlue", Red: 102, Green: 102, Blue: 153},
+
+        {label: "Blue", Red: 0, Green: 0, Blue: 255},
 
         {label: "MediumBlue", Red: 51, Green: 102, Blue: 255},
 
@@ -177,8 +178,5 @@ func SetColor(color int, index int) int {
     if index == 2 {
         return Colors[color].Blue
     }
-    if index < 0 || index > 2 {
-        return -1 //LogIndexError
-    }
-
+    return 10
 }

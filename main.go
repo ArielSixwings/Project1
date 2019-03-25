@@ -36,16 +36,17 @@ func main() {
 
     Suplies.X = 800
     Suplies.Y = 920
-    var HotPink = [4]uint8{153, 51, 102, 0} //HotPink
     imageprocessing.PaintCircle(Mars, Center, 10, color.RGBA{
-        SetColor(HotPink, 0, 0.0),
-        SetColor(HotPink, 1, 0.0),
-        SetColor(HotPink, 2, 0.0),
-        SetColor(HotPink, 3, 1.1)}, 5, true, false)
+        rgbacolor.SetColor(rgbacolor.Black, 0),
+        rgbacolor.SetColor(rgbacolor.Black, 1),
+        rgbacolor.SetColor(rgbacolor.Black, 2),
+        0}, 5, true, false)
     //PaintPath(Mars, Base, Suplies)
     //
     var ThisGraph mygraph.Graph
     ThisGraph.MakeGraph(8)
     // ShowImage("The Canne was done!",MarsEdge,0)
+
+    mygraph.BestPath(ThisGraph, 1)
 
 }
