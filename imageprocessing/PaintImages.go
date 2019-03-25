@@ -25,13 +25,16 @@ func PaintCircle(Image gocv.Mat, center image.Point, radius int, color color.RGB
     }
 }
 
-// func PaintPath(Image gocv.Mat, Initial image.Point, Destiny image.Point) {
-//     for Initial.X != Destiny.X {
-//         Initial.X = Initial.X + 1
-//         for Initial.Y != Destiny.Y {
-//             Initial.Y = Initial.Y + 1
-//             Image.at < gocv.Vec3b > (Initial) = HotPink
-//             ShowImage("Steps", Image, 5)
-//         }
-//     }
-// }
+
+func PaintRectangle(Image gocv.Mat, r image.Rectangle, color color.RGBA, thickness int, show bool, save bool)
+
+    gocv.Rectangle(Image, r, color, thickness)
+
+    if show {
+        ShowImage("The Rectangle was done!", Image, 0)
+    }
+
+    if save {
+        SaveImage("RectangleMade", Image)
+    }
+}
