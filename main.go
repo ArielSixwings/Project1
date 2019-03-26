@@ -8,6 +8,7 @@ import (
     "gocv.io/x/gocv"
     "image"
     "image/color"
+    //"math"
 )
 
 func main() {
@@ -44,9 +45,12 @@ func main() {
     //PaintPath(Mars, Base, Suplies)
     //
     var ThisGraph mygraph.Graph
-    ThisGraph.MakeGraph(8)
-    // ShowImage("The Canne was done!",MarsEdge,0)
+    var auxsize = ThisGraph.MakeGraph(8)
+    //var sizefloat64 float64 = float64(auxsize)
+    //var Size = math.Pow(2.0, sizefloat32)
 
-    mygraph.BestPath(ThisGraph, 1)
+    //Path := [Size]Checkpoint{}
+    mygraph.BuildPaths(auxsize)
+    // ShowImage("The Canne was done!",MarsEdge,0)
 
 }

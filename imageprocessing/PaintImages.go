@@ -22,7 +22,7 @@ func PaintCircle(Image gocv.Mat, center image.Point, radius int, color color.RGB
 
 func PaintRectangle(Image gocv.Mat, r image.Rectangle, color color.RGBA, thickness int, show bool, save bool) {
 
-    gocv.Rectangle(Image, r, color, thickness)
+    gocv.Rectangle(&Image, r, color, thickness)
 
     if show {
         ShowImage("The Rectangle was done!", Image, 0)

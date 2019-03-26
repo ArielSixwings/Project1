@@ -1,0 +1,3 @@
+Path[A*B*C*D*E*F*G].Label[H] = this.Nodes[i].Edges[auxedge].Number
+                                    Path[A*B*C*D*E*F*G].Weight[H] = this.Nodes[i].Edges[auxedge].EdgeWeight
+                                    Path[A*B*C*D*E*F*G].TotalWeight = (Path[A*B*C*D*E*F*G].TotalWeight + this.Nodes[i].Edges[auxedge].EdgeWeight)

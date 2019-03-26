@@ -80,6 +80,9 @@ const Black = 38
 
 const HotPink = 39
 
+/**
+ * @brief      Class for rgba color.
+ */
 type RGBAcolor struct {
     Red   uint8
     Green uint8
@@ -87,6 +90,14 @@ type RGBAcolor struct {
     label string
 }
 
+/**
+ * @brief      Sets the color.
+ *
+ * @param      color  The color
+ * @param      index  The index
+ *
+ * @return     { A chanel, Red, Green or Blue}
+ */
 func SetColor(color int, index int) uint8 {
 
     Colors := []RGBAcolor{
