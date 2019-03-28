@@ -47,3 +47,17 @@ func (this *Graph) MakeGraph(Size int) int {
     } //for
     return this.size
 }
+
+/**
+ * @brief      { Inits a empty graph }
+ *
+ * @param      Size  The size
+ *
+ * @return     { The Graph size }
+ */
+func (this *Graph) InitGraph(Size int) int {
+    this.Nodes = make([]Node, Size)
+    this.size = Size
+
+    return this.size
+}

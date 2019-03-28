@@ -5,7 +5,7 @@ import (
     "io"
     "io/ioutil"
     "os"
-    "strconv"
+    //"strconv"
 )
 
 //___________Code Bricks const________//
@@ -84,9 +84,9 @@ func CheckError(err error) {
  * @return     The paths.
  */
 func BuildPaths(size int) {
-    numberfile := strconv.Itoa(size)
-    filename := "SolveTravel .go"
-    filename = (filename[:11] + numberfile + filename[11+1:])
+    //numberfile := strconv.Itoa(size)
+    filename := "SolveTravel_.go"
+    //filename = (filename[:11] + numberfile + filename[11+1:])
     fmt.Println("the file name", filename)
     file, err := os.Create(filename)
 

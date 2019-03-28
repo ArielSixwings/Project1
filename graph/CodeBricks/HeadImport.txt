@@ -1,10 +1,8 @@
 package main
 
-//import (
-//    "fmt"
-//    "io/ioutil"
-//      "mygraph"
-//)
+import (
+    "./graph"
+)
 
 /**
  * @brief      { Solve the travel problem by brute force }
@@ -14,8 +12,8 @@ package main
  *
  * @return     { Return the not sorted path, which is a Cheackpoint struct}
  */
-func (this *Graph) SolveTravel(Size int, Base int) Checkpoint {
-    Path := [Size]Checkpoint{}
+func (this *(mygraph.Graph)) SolveTravel(Size int, Base int) mygraph.Checkpoint {
+    Path := [Size]mygraph.Checkpoint{}
     Path[0].Label = Base
     Path[(Size - 1)].Label = Base
-    Path.TotalWeight = (2*this.Nodes[i].Edges[auxedge].EdgeWeight)
+    Path.TotalWeight = 0

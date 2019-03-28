@@ -5,7 +5,7 @@
 int main(int argc, char *argv[]) {
     int numberOfNodes = atoi(argv[2]);
     int min=5,max=100;
-    int i, j, k, times = 10;
+    int i, j, k, times = 100;
     float w;
     FILE *arquivo;
     

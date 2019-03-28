@@ -5,9 +5,11 @@ import (
     "./graph"
     "./imageprocessing"
 
+    "fmt"
     "gocv.io/x/gocv"
     "image"
     "image/color"
+    "os/exec"
     //"math"
 )
 
@@ -42,15 +44,20 @@ func main() {
         rgbacolor.SetColor(rgbacolor.Black, 1),
         rgbacolor.SetColor(rgbacolor.Black, 2),
         0}, 5, true, false)
-    //PaintPath(Mars, Base, Suplies)
-    //
-    var ThisGraph mygraph.Graph
-    var auxsize = ThisGraph.MakeGraph(8)
-    //var sizefloat64 float64 = float64(auxsize)
-    //var Size = math.Pow(2.0, sizefloat32)
 
-    //Path := [Size]Checkpoint{}
+    var ThisGraph mygraph.Graph
+    var auxsize = ThisGraph.InitGraph(8)
+
     mygraph.BuildPaths(auxsize)
-    // ShowImage("The Canne was done!",MarsEdge,0)
+
+    out, err := exec.Command("./run.sh").Output()
+    if err != nil {
+        fmt.Printf("I found some error to run the program: %s", err)
+    } else {
+        fmt.Println("\nCommand Successfully Executed")
+    }
+
+    output := string(out[:])
+    fmt.Println(output)
 
 }
