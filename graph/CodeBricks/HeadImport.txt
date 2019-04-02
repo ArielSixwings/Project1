@@ -2,7 +2,29 @@ package main
 
 import (
     "./graph"
+    "strconv"
 )
+
+/**
+ * @brief      Reads lines.
+ *
+ * @param      path  The path
+ *
+ * @return     { All the file in the string and an error safe mensage}
+ */
+func ReadLines(path string) ([]string, error) {
+    file, err := os.Open(path)
+    if err != nil {
+        return nil, err
+    }
+    defer file.Close()
+    var lines []string
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        lines = append(lines, scanner.Text())
+    }
+    return lines, scanner.Err()
+}
 
 /**
  * @brief      { Solve the travel problem by brute force }
@@ -12,8 +34,4 @@ import (
  *
  * @return     { Return the not sorted path, which is a Cheackpoint struct}
  */
-func (this *(mygraph.Graph)) SolveTravel(Size int, Base int) mygraph.Checkpoint {
-    Path := [Size]mygraph.Checkpoint{}
-    Path[0].Label = Base
-    Path[(Size - 1)].Label = Base
-    Path.TotalWeight = 0
+func SolveTravel(Size int, Base int, this *(mygraph.Graph)) [](mygraph.Checkpoint) {

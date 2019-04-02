@@ -13,6 +13,11 @@ import (
     //"math"
 )
 
+/**
+ *
+ * @brief      { function_description }
+ * @return     { description_of_the_return_value }
+ */
 func main() {
 
     Marshist := gocv.NewMat() //mat for histogram equalization
@@ -47,6 +52,7 @@ func main() {
 
     var ThisGraph mygraph.Graph
     var auxsize = ThisGraph.InitGraph(8)
+    ThisGraph.MakeGraph(8)
 
     mygraph.BuildPaths(auxsize)
 

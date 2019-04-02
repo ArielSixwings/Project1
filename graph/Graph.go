@@ -1,5 +1,7 @@
 package mygraph
 
+import "fmt"
+
 /**
  * @brief      Class for edge.
  */
@@ -33,17 +35,15 @@ type Graph struct {
 func (this *Graph) MakeGraph(Size int) int {
     this.Nodes = make([]Node, Size)
     this.size = Size
-    var i int = 0
-    var auxedge int
-    for i < (Size - 1) {
-        this.Nodes[i].Edges = make([]Edge, (Size - (1 + i)))
-        auxedge = 0
-        for auxedge < (Size - (1 + i)) {
-            this.Nodes[i].Edges[auxedge].Number = (i * auxedge) + 1
-            this.Nodes[i].Edges[auxedge].EdgeWeight = 20.1
-            auxedge++
+    // var Weights []float32{}
+    for i := 0; i < Size; i++ {
+        this.Nodes[i].Edges = make([]Edge, (Size - i))
+        for edge := 1; edge < Size-i; edge++ {
+            this.Nodes[i].Edges[edge].Number = edge + i
+            fmt.Printf("%d node %d    ", (edge + i), i)
+            this.Nodes[i].Edges[edge].EdgeWeight = float32(i + edge)
         } //for
-        i++
+        fmt.Println("\n")
     } //for
     return this.size
 }

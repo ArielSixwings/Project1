@@ -85,7 +85,7 @@ func CheckError(err error) {
  */
 func BuildPaths(size int) {
     //numberfile := strconv.Itoa(size)
-    filename := "SolveTravel_.go"
+    filename := "SolveTravel.go"
     //filename = (filename[:11] + numberfile + filename[11+1:])
     fmt.Println("the file name", filename)
     file, err := os.Create(filename)
