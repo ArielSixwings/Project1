@@ -66,4 +66,12 @@ func main() {
     output := string(out[:])
     fmt.Println(output)
 
+    // for i := 0; i < 100; i++ {
+    //     for j := 0; j < 100; j++ {
+    //         C.SetPixel(&Mars, i, j, 0, 0, 0)
+    //     }
+    // }
+    //fmt.Printf("%d", C.AuxFunc())
+    imageprocessing.ShowImage("Oh mann, did it worked ?", Mars, 0)
+
 }
