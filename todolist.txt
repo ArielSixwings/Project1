@@ -1,7 +1,0 @@
-1 - Fazer a main rodar o solve travel adequadamente(esse ultimo tem erros, poucos....).
-
-2 - Fazer o programa em go rodar funções em c++.
-
-3 - Usar o programa anterior para pintar um array de pixels.
-
-4 - Documentação, sucinta e focada em fluxogramas como os que eu enviei.
