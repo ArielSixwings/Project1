@@ -1,6 +1,10 @@
 package mygraph
 
-import "fmt"
+import (
+    "bufio"
+    "fmt"
+    "os"
+)
 
 /**
  * @brief      Class for edge.

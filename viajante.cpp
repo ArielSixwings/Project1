@@ -55,7 +55,6 @@ pair<ll, vector<int>> caixeiroViajante(int vertice, ll bitmask){
 
     // Se estamos no vertice incial e bitmask NÃO é nula
 
-//-------------------------------//
     if(vertice == Base and bitmask == (1<<V) - 1){
 
         // Se bitmask estiver preenchida temos um resultado válido (1<<V - 1 == 2^v - 1)
@@ -65,7 +64,7 @@ pair<ll, vector<int>> caixeiroViajante(int vertice, ll bitmask){
         return make_pair(0, encontrado);
 
     }else if(vertice == Base and (bitmask>>Base & 1)){
-
+        cout<<(bitmask>>Base & 1)<<"the fuck type "<<endl;
         // Caso não esteja preenchida, resultado inválido (0 < bitmask < 2^v - 1)
 
         return make_pair((ll)INF*(ll)INF, vector<int>());
@@ -95,7 +94,7 @@ pair<ll, vector<int>> caixeiroViajante(int vertice, ll bitmask){
 
                 valor = resultado.first + distancia[vertice][i];
                 caminho = resultado.second;
-//-------------------------------//
+
 
             }
 
@@ -106,7 +105,6 @@ pair<ll, vector<int>> caixeiroViajante(int vertice, ll bitmask){
     caminho.push_back(vertice);
 
     return make_pair(valor, caminho); // Retornando par de vetor caminho + valor do caminho
-
 }
 
 int main(){
