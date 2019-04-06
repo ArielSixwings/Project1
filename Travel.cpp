@@ -113,8 +113,8 @@ int main(){
 
     // Guardando graph
 
-    std::cout<<"Digite o numero dr currents e arestas, depois para cada aresta\n";
-    std::cout<<"a aresta de origem, destino e o peso da aresta\n";
+    // std::cout<<"Digite o numero dr currents e arestas, depois para cada aresta\n";
+    // std::cout<<"a aresta de origem, destino e o peso da aresta\n";
 
     for(int i = 0; i < E; i++){
 
@@ -126,36 +126,38 @@ int main(){
 
     }
 
-    std::cout<<"Formando array de distancias...\n";
+    // std::cout<<"Formando array de distancias...\n";
 
-    std::cout<<"distances do index na linha para o index na coluna (-1 = Infinito)\n";
+    // std::cout<<"distances do index na linha para o index na coluna (-1 = Infinito)\n";
 
 
-    // Print bonito da tabela de distancias
+    // // Print bonito da tabela de distancias
 
     for(int i = 0; i < V; i++)
         Dijkstra(i);
 
-    printf("   ");
-    for(int i = 0; i < V; i++)
-        printf("%4d ", i + 1);
-    std::cout<<std::endl;
+    // printf("    ");
+    // for(int i = 0; i < V; i++)
+    //     printf("%4d      ", i + 1);
+    // std::cout<<std::endl;
 
-    printf("   ");
-    for(int i = 0; i < V; i++)
-        printf("____ ");
-    std::cout<<std::endl;
+    // printf("     ");
+    // for(int i = 0; i < V; i++)
+    //     printf("__________");
+    // std::cout<<std::endl;
 
-    for(int i = 0; i < V; i++){
-        printf("%d |", i + 1);
-        for(int j = 0; j < V; j++){
-            printf("%4d ", (distances[i][j] == INF? -1 : distances[i][j]));
-        }
-        std::cout<<std::endl;
-    }
+    // for(int i = 0; i < V; i++){
+    //     //std::cout<<"      |"<<std::endl;
+    //     printf("%d |", i + 1);
+    //     //std::cout<<"      |"<<std::endl;
+    //     for(int j = 0; j < V; j++){
+    //         printf("%4d      ", (distances[i][j] == INF? -1 : distances[i][j]));
+    //     }
+    //     std::cout<<std::endl;
+    //}
     // Essa parte acima pode ser ignorada
 
-    std::cout<<"Formar Path partindo e terminando em qual current: ";
+    //std::cout<<"Formar Path partindo e terminando em qual current: ";
 
     std::cin>>currentInitial;
 
@@ -174,16 +176,24 @@ int main(){
 
     else{ // Mas caso exista, é retornado o par do valor e Path
 
-        std::cout<<"Tamanho do percurso do Path mais curto = "<<BestPath.first<<std::endl;
+        //std::cout<<"Tamanho do percurso do Path mais curto = "<<BestPath.first<<std::endl;
 
-        auto vector = BestPath.second;
-        reverse(vector.begin(), vector.end());
+        auto vectorpath = BestPath.second;
+        reverse(vectorpath.begin(), vectorpath.end());
 
-        std::cout<<"Path: ";
 
-        for(auto index: vector)
-            std::cout<<index<<' ';
+        int a = 0;
+        for(auto index: vectorpath)a++;
+        std::cout<<(a-1)<<std::endl;
+        for (int i = 0; i < (a-1); ++i){
+            if (i<(a-1)){
+                std::cout<<vectorpath[i]<<" "<<vectorpath[i+1]<<std::endl;
+            }
+            else{
+                std::cout<<vectorpath[i]<<" "<<vectorpath[0]<<std::endl;
+            }
+        }
 
-        std::cout<<std::endl;
+        //std::cout<<std::endl;
     }
 }
